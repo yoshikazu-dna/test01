@@ -26,11 +26,10 @@ class Bbs_model extends CI_Model {
 		return $data;
 	}
 
-	public function writeBbs($name)
+	public function writeBbs($data)
 	{
-		$no = $this->getNo();
-		$newLine = sprintf("%s,%s\r\n", $no, $name);
-
+		$this->sanitize($data);
+		$newLine = implode(',', $data) . "\r\n";
 		$fp = fopen(self::FILE_PATH, 'a');
 		fputs($fp, $newLine);
 		fclose($fp);
