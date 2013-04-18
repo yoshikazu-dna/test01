@@ -15,6 +15,7 @@ class Test extends CI_Controller {
 #			$data['count'] = $this->counter_lib->getCount();
 
 			$data['name'] = "test";
+			$data['list'] = "リスト";
 
 			$this->load->view('test_message', $data);
 
