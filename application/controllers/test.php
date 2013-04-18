@@ -11,13 +11,10 @@ class Test extends CI_Controller {
 	public function index()
 	{
 		try {
-			$this->counter_lib->incCount();
-			$data['count'] = $this->counter_lib->getCount();
+#			$this->counter_lib->incCount();
+#			$data['count'] = $this->counter_lib->getCount();
 
-			$data['name'] = "";
-			echo "<pre>";
-			print_r($data);
-			echo "</pre>";
+			$data['name'] = "test";
 
 			$this->load->view('test_message', $data);
 
